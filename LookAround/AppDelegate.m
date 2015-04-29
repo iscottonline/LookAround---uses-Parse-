@@ -17,7 +17,50 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+        
+        // Register for Push Notitications, if running iOS 8
+        if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+            UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                            UIUserNotificationTypeBadge |
+                                                            UIUserNotificationTypeSound);
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                     categories:nil];
+            [application registerUserNotificationSettings:settings];
+            [application registerForRemoteNotifications];
+            
+        } else {
+            // Register for Push Notifications before iOS 8
+            [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                             UIRemoteNotificationTypeAlert |
+                                                             UIRemoteNotificationTypeSound)];
+        }
+        
+    [Parse setApplicationId:@"3JcI0lRfOYPLLoIKGDL7VgqVUXaIusEZ7v5oA2xp"
+                  clientKey:@"B7Ev3T5v3issLgURqnXyV4S0voOGxmOogSWB3vFu"];
+ //  [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    //tab1
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:.28 green:.7 blue:.4 alpha:1]];
+    [self customizeInterface];
+    
     return YES;
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    PFInstallation *install = [PFInstallation currentInstallation];
+    [install setDeviceTokenFromData:deviceToken];
+     install.channels = @[ @"global" ];
+    [install saveInBackground];
+
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+    
+    UITabBarController *tab = (UITabBarController *)self.window.rootViewController;
+    tab.selectedIndex = 1;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -42,4 +85,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+-(void)customizeInterface
+{
+    //Customize Navbar
+//  [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:.28 green:.7 blue:.4 alpha:1]];
+   // UIFont *moz = [UIFont fontWithName:@"Montserrat-Light.ttf" size:18];
+
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBar"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                    [UIColor whiteColor],  UITextAttributeTextColor,
+     [UIFont fontWithName:@"Avenir-Heavy" size:24], NSFontAttributeName, nil]];
+    
+}
 @end

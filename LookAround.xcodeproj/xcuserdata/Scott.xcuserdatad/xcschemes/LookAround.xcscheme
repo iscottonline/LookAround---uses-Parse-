@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D2336F4F1A07322B00423499"
-               BuildableName = "LookAround.app"
+               BuildableName = "lookAround.app"
                BlueprintName = "LookAround"
-               ReferencedContainer = "container:LookAround.xcodeproj">
+               ReferencedContainer = "container:lookAround.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "D2336F6B1A07322C00423499"
                BuildableName = "LookAroundTests.xctest"
                BlueprintName = "LookAroundTests"
-               ReferencedContainer = "container:LookAround.xcodeproj">
+               ReferencedContainer = "container:lookAround.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "D2336F6B1A07322C00423499"
                BuildableName = "LookAroundTests.xctest"
                BlueprintName = "LookAroundTests"
-               ReferencedContainer = "container:LookAround.xcodeproj">
+               ReferencedContainer = "container:lookAround.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D2336F4F1A07322B00423499"
-            BuildableName = "LookAround.app"
+            BuildableName = "lookAround.app"
             BlueprintName = "LookAround"
-            ReferencedContainer = "container:LookAround.xcodeproj">
+            ReferencedContainer = "container:lookAround.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D2336F4F1A07322B00423499"
-            BuildableName = "LookAround.app"
+            BuildableName = "lookAround.app"
             BlueprintName = "LookAround"
-            ReferencedContainer = "container:LookAround.xcodeproj">
+            ReferencedContainer = "container:lookAround.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D2336F4F1A07322B00423499"
-            BuildableName = "LookAround.app"
+            BuildableName = "lookAround.app"
             BlueprintName = "LookAround"
-            ReferencedContainer = "container:LookAround.xcodeproj">
+            ReferencedContainer = "container:lookAround.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
